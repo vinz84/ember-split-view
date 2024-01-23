@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import { observer } from '@ember/object';
 import { next } from '@ember/runloop'
-import Component from '@ember/component';
 
 
 /**

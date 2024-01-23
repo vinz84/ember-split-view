@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 import { schedule, next, scheduleOnce } from '@ember/runloop'
 import splitChildLayout from 'ember-split-view/templates/components/split-child';
+import jQuery from 'jquery';
 
 export default Component.extend({
   layout: splitChildLayout,
@@ -115,7 +116,7 @@ export default Component.extend({
       scheduleOnce('afterRender', this, () => {
         const childSplitView = this.get('childSplitView');
 
-        const element = this.$();
+        const element = jQuery(this);
         if (childSplitView) {
           childSplitView.set('width', element.width());
           childSplitView.set('height', element.height());
@@ -134,7 +135,7 @@ export default Component.extend({
   },
 
   cssInt(name) {
-    return parseInt(this.$().css(name), 10) || 0;
+    return parseInt(jQuery(this).css(name), 10) || 0;
   },
 
   minSizeVertical() {

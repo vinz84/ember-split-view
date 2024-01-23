@@ -6,7 +6,6 @@ import { A } from '@ember/array';
 import { next, scheduleOnce } from '@ember/runloop'
 import SplitChild from './split-child';
 import splitViewLayout from 'ember-split-view/templates/components/split-view';
-import jQuery from 'jquery';
 
 
 /**
@@ -99,9 +98,9 @@ export default Component.extend({
       });
       scheduleOnce('afterRender', this, () => {
         // must do this in afterRender so that the parent has calculated its width and height
-        const element = jQuery(this);
-        this.set('width', element.width());
-        this.set('height', element.height());
+        const element = this;
+        this.set('width', element.offsetWidth);
+        this.set('height', element.offsetHeight);
       });
     });
   },
@@ -115,9 +114,9 @@ export default Component.extend({
   },
 
   didResize() {
-    const element = jQuery(this);
-    this.set('width', element.width());
-    this.set('height', element.height());
+    const element = this;
+    this.set('width', element.offsetWidth);
+    this.set('height', element.offsetHeight);
     this.constrainSplit();
   },
 
@@ -227,11 +226,11 @@ export default Component.extend({
 
     let position = 0;
 
-    const offset = jQuery(this).offset();
+//    const offset = jQuery(this).offset();
     if (this.get('isVertical')) {
-      position = event.pageX - offset.left;
+      position = event.pageX - this.offsetLeft;
     } else {
-      position = event.pageY - offset.top;
+      position = event.pageY - this.offestTop;
     }
 
     this.set('splitPosition', position);

@@ -134,7 +134,7 @@ export default Component.extend({
   },
 
   cssInt(name) {
-    return parseInt(this.getPropertyValue(name), 10) || 0;
+    return parseInt(window.getComputedStyle(document.querySelector('#'+this.elementId)).getPropertyValue(name), 10) || 0;
   },
 
   minSizeVertical() {

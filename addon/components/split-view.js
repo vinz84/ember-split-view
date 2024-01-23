@@ -98,7 +98,8 @@ export default Component.extend({
       });
       scheduleOnce('afterRender', this, () => {
         // must do this in afterRender so that the parent has calculated its width and height
-        const element = this;
+        const element = document.querySelector('#'+this.elementId);
+
         this.set('width', element.offsetWidth);
         this.set('height', element.offsetHeight);
       });
@@ -227,6 +228,8 @@ export default Component.extend({
     let position = 0;
 
 //    const offset = jQuery(this).offset();
+    const offset = document.querySelector('#'+this.elementId);
+
     if (this.get('isVertical')) {
       position = event.pageX - this.offsetLeft;
     } else {

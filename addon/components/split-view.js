@@ -6,6 +6,7 @@ import { A } from '@ember/array';
 import { next, scheduleOnce } from '@ember/runloop'
 import SplitChild from './split-child';
 import splitViewLayout from 'ember-split-view/templates/components/split-view';
+import Component from '@ember/component';
 
 
 /**

@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 import { schedule, next, scheduleOnce } from '@ember/runloop'
 import splitChildLayout from 'ember-split-view/templates/components/split-child';
+import Ember from 'ember';
 
 export default Component.extend({
   layout: splitChildLayout,

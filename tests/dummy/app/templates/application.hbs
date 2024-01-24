@@ -4,11 +4,11 @@
 </div>
 {{page-title "Dummy"}}
 
-    {{#link-to "vertical" class="toolbar-item"}}Vertical{{/link-to}}
-    {{#link-to "horizontal" class="toolbar-item"}}Horizontal{{/link-to}}
-    {{#link-to "verticalComposite" class="toolbar-item"}}Vertical Composite{{/link-to}}
-    {{#link-to "horizontalComposite" class="toolbar-item"}}Horizontal Composite{{/link-to}}
-    {{#link-to "composite" class="toolbar-item"}}Composite{{/link-to}}
-    {{#link-to "collapsible" class="toolbar-item"}}Collapsible{{/link-to}}
+    <LinkTo @route="vertical" class="toolbar-item">Vertical</LinkTo>
+    <LinkTo @route="horizontal" class="toolbar-item">Horizontal</LinkTo>
+    <LinkTo @route="verticalComposite" class="toolbar-item">Vertical Composite</LinkTo>
+    <LinkTo @route="horizontalComposite" class="toolbar-item">Horizontal Composite</LinkTo>
+    <LinkTo @route="composite" class="toolbar-item">Composite</LinkTo>
+    <LinkTo @route="collapsible" class="toolbar-item">Collapsible</LinkTo>
 
   {{outlet}}
